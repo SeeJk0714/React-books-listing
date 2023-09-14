@@ -57,10 +57,13 @@ const BookList = () => {
             <div className="row">
                 {/* instruction: list books using .map() */}
                 {books.map((book) => (
-                    <div className="col-4 my-5" key={book.title}>
+                    <div
+                        className="col-lg-4 col-md-6 col-12 my-5"
+                        key={book.title}
+                    >
                         <div className="card">
                             <img
-                                src="../images/book.jpg"
+                                src={"../images/" + book.image}
                                 alt={book.title}
                                 className="card-img-top"
                             />
