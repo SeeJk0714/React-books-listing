@@ -2,26 +2,26 @@ import React, { useState, useEffect, useMemo } from "react";
 import { bookData } from "./data/books";
 
 const BookList = () => {
-    const [books, setBooks] = useState([]);
+    const [books, setBooks] = useState(bookData);
     const [selectedCategory, setSelectedCategory] = useState("");
 
     const categories = useMemo(() => {
         let options = [];
         /* Instruction: Get all categories from books */
-        // if (books && books.length > 0) {
-        bookData.forEach((book) => {});
         books.forEach((book) => {
-            if (!options.includes(book.categories)) {
-                options.push(book.categories);
-            }
+            book.categories.forEach((b) => {
+                if (!options.includes(b)) {
+                    options.push(b);
+                }
+            });
         });
-        // }
+
         return options;
     }, []);
 
     useEffect(() => {
         /* instruction: load books from the books data */
-        setBooks(bookData);
+        // setBooks(bookData);
     }, []);
 
     useEffect(() => {
